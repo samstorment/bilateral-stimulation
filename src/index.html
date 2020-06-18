@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+        <title>Bilateral Stimulation</title>
+        <link rel="stylesheet" href="index.css">
+        <script defer src="render.js"></script>
+    </head>
+    <body>
+        <div class="title-bar" id="title-bar">
+            <div class="title-button-container">
+                <div class="title-button" id="hamburger-menu" title="Press f11 to enter and exit fullscreen. Arrow keys can adjust ball speed and size.">
+                    <img src="icons/hamburger.svg" alt="Sidebar">
+                </div>
+            </div>
+            <div class="title-button-container min-max-close">
+                <div class="title-button" id="min-button">
+                    <img src="icons/dash.svg" alt="minimize"> 
+                </div>
+                <div class="title-button" id="max-button">
+                    <img src="icons/rect.svg" alt="maximize"> 
+                </div>
+                <div class="title-button" id="close-button">
+                    <img src="icons/x.svg" alt="close"> 
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar" id="sidebar">
+            
+            <div class="sidebar-row">
+                <label for="background-color">Background</label>
+                <input type="color" class="sidebar-color" id="background-color" value="#0f0f0f">
+            </div>
+            
+            <div class="sidebar-row">
+                <label for="ball-color">Ball</label>
+                <input type="color" class="sidebar-color" id="ball-color" value="#857887">
+            </div>
+
+            <div class="sidebar-row">
+                <label for="ball-size">Size</label>
+                <input type="range" class="sidebar-slider" id="ball-size" value="50" min="1" max="200">
+            </div>
+
+            <div class="sidebar-row">
+                <label for="ball-speed">Speed</label>
+                <input type="range" class="sidebar-slider" id="ball-speed" value="15" min="0" max="200">
+            </div>
+
+            <div class="sidebar-row">
+                <label for="ball-wait">Wait (seconds)</label>
+                <input type="number" class="sidebar-number" id="ball-wait" value=".5" min="0" max="60" step=".1">
+            </div>
+
+
+            <div class="sidebar-row" id="sound-row">
+
+                <div class="sound-subrow">
+                    <label for="sound-checkbox">Play Sound</label>
+                    <input type="checkbox" class="sidebar-checkbox" id="sound-checkbox">
+                </div>
+
+                <div class="sound-subrow">
+                    <label for="default-sound-checkbox">Use Default Sound</label>
+                    <input type="checkbox" class="sidebar-checkbox" id="default-sound-checkbox" checked="true">
+                </div>
+
+                <div class="sound-subrow">
+                    <input type="file" id="sound-file" data-buttonText="Sound" accept="audio/*" disabled="disabled">
+                    <audio id="default-sound" src="./sounds/short-beep.mp3" preload="auto"></audio>
+                    <audio id="chosen-sound" preload="auto"></audio>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <canvas id="canvas"></canvas>
+    </body>
+</html>
