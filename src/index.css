@@ -62,6 +62,7 @@ body {
 
 #sidebar {
     background-color: rgb(50, 50, 50);
+    display: none;
 }
 
 .sidebar-row {
